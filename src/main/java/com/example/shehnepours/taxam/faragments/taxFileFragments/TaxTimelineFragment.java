@@ -1,9 +1,10 @@
 package com.example.shehnepours.taxam.faragments.taxFileFragments;
 
-import android.app.Fragment;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +30,12 @@ public class TaxTimelineFragment extends Fragment {
     private VerticalTextView madeh251;
     private VerticalTextView divan;
 
-    private ImageView tashkhisDown;
-    private ImageView ekhtelafDown;
-    private ImageView tajdidDown;
-    private ImageView shoraDown;
-    private ImageView madehDown;
-    private ImageView divanDown;
+    private ImageView tashkhisUp;
+    private ImageView ekhtelafUp;
+    private ImageView tajdidUp;
+    private ImageView shoraUp;
+    private ImageView madehUp;
+    private ImageView divanUp;
 
     private CustomButton consultButton;
 
@@ -64,13 +65,44 @@ public class TaxTimelineFragment extends Fragment {
         madeh251 = (VerticalTextView) view.findViewById(R.id.madeh251_timeline);
         divan = (VerticalTextView) view.findViewById(R.id.divan_timeline);
 
-        tashkhisDown = (ImageView) view.findViewById(R.id.ic_down_tashkhis);
-        ekhtelafDown = (ImageView) view.findViewById(R.id.ic_down_ehktelaf);
-        tajdidDown = (ImageView) view.findViewById(R.id.ic_down_tajdid);
-        shoraDown = (ImageView) view.findViewById(R.id.ic_down_shora);
-        madehDown = (ImageView) view.findViewById(R.id.madeh_down);
-        divanDown = (ImageView) view.findViewById(R.id.ic_down_divan);
+        tashkhisUp = (ImageView) view.findViewById(R.id.ic_up_tashkhis);
+        ekhtelafUp = (ImageView) view.findViewById(R.id.ic_up_ekhtelaf);
+        tajdidUp = (ImageView) view.findViewById(R.id.ic_up_tajdid);
+        shoraUp = (ImageView) view.findViewById(R.id.ic_up_shora);
+        madehUp = (ImageView) view.findViewById(R.id.ic_up_madeh251);
+        divanUp = (ImageView) view.findViewById(R.id.ic_up_divan);
 
+
+        if (step == 1) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+            ekhtelaf.setTextColor(Color.WHITE);
+            tajdid.setTextColor(Color.WHITE);
+            shora.setTextColor(Color.WHITE);
+            madeh251.setTextColor(Color.WHITE);
+            divan.setTextColor(Color.WHITE);
+
+            tashkhisUp.setVisibility(View.VISIBLE);
+            ekhtelafUp.setVisibility(View.INVISIBLE);
+            tajdidUp.setVisibility(View.INVISIBLE);
+            shoraUp.setVisibility(View.INVISIBLE);
+            madehUp.setVisibility(View.INVISIBLE);
+            divanUp.setVisibility(View.INVISIBLE);
+        } else if (step == 2) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            ekhtelaf.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+            tajdid.setTextColor(Color.WHITE);
+            shora.setTextColor(Color.WHITE);
+            madeh251.setTextColor(Color.WHITE);
+            divan.setTextColor(Color.WHITE);
+
+            tashkhisUp.setVisibility(View.INVISIBLE);
+            ekhtelafUp.setVisibility(View.VISIBLE);
+            tajdidUp.setVisibility(View.INVISIBLE);
+            shoraUp.setVisibility(View.INVISIBLE);
+            madehUp.setVisibility(View.INVISIBLE);
+            divanUp.setVisibility(View.INVISIBLE);
+
+        }
 
 
     }

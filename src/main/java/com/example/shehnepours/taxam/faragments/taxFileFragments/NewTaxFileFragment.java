@@ -69,7 +69,7 @@ public class NewTaxFileFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                ((UserProfileActivity)getActivity()).gotoFragment(new AddedValueAgreementFragment());
-                Fragment eterazFragment = new EtereazFileFragment();
+                Fragment eterazFragment = new TaxTimelineFragment();
                 setBundleForFragment(eterazFragment,Variables.STEPS_NUMBER,1);
                 goToFragment(eterazFragment);
             }
@@ -77,7 +77,7 @@ public class NewTaxFileFragment extends Fragment {
         secondRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment operationalFragment = new OperationalAgreementFragment();
+                Fragment operationalFragment = new TaxTimelineFragment();
                 setBundleForFragment(operationalFragment,Variables.STEPS_NUMBER,2);
                 goToFragment(operationalFragment);
             }

@@ -32,9 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/status_textview"
         android:layoutDirection="ltr"
-        android:background="@color/white"
-        android:stateListAnimator="@null"
-        android:elevation="@dimen/standard_margin"
+        android:elevation="1dp"
         >
         <com.example.shehnepours.taxam.parents.VerticalTextView
             android:id="@+id/barge_tashkhis_timeline"
@@ -43,8 +41,8 @@
             android:background="@color/white"
             android:gravity="center"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="4dp"
@@ -59,6 +57,7 @@
             android:layout_alignRight="@id/barge_tashkhis_timeline"
             android:layout_alignLeft="@id/barge_tashkhis_timeline"
             android:src="@drawable/ic_down_white"
+            android:elevation="4dp"
             />
         <ImageView
             android:id="@+id/ic_up_tashkhis"
@@ -78,8 +77,8 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/barge_tashkhis_timeline"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="5dp"
@@ -92,6 +91,7 @@
             android:layout_below="@+id/hale_ekhtelaf_timeline"
             android:layout_alignRight="@id/hale_ekhtelaf_timeline"
             android:layout_alignLeft="@id/hale_ekhtelaf_timeline"
+            android:elevation="5dp"
             android:src="@drawable/ic_down_white"
             />
         <ImageView
@@ -112,8 +112,8 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/hale_ekhtelaf_timeline"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="6dp"
@@ -127,6 +127,7 @@
             android:layout_alignRight="@id/tajdid_timeline"
             android:layout_alignLeft="@id/tajdid_timeline"
             android:src="@drawable/ic_down_white"
+            android:elevation="6dp"
             />
         <ImageView
             android:id="@+id/ic_up_tajdid"
@@ -146,8 +147,8 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/tajdid_timeline"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="7dp"
@@ -161,6 +162,7 @@
             android:layout_alignRight="@id/shora_timeline"
             android:layout_alignLeft="@id/shora_timeline"
             android:src="@drawable/ic_down_white"
+            android:elevation="7dp"
             />
         <ImageView
             android:id="@+id/ic_up_shora"
@@ -180,8 +182,8 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/shora_timeline"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="8dp"
@@ -194,6 +196,7 @@
             android:layout_below="@+id/madeh251_timeline"
             android:layout_alignRight="@id/madeh251_timeline"
             android:layout_alignLeft="@id/madeh251_timeline"
+            android:elevation="8dp"
             android:src="@drawable/ic_down_white"
             />
         <ImageView
@@ -214,8 +217,8 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/madeh251_timeline"
             android:textSize="@dimen/large_font"
-            android:paddingTop="@dimen/standard_margin_2x"
-            android:paddingBottom="@dimen/standard_margin_2x"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/hint_text"
             android:stateListAnimator="@null"
             android:elevation="9dp"
@@ -229,6 +232,7 @@
             android:layout_alignRight="@id/divan_timeline"
             android:layout_alignLeft="@id/divan_timeline"
             android:src="@drawable/ic_down_white"
+            android:elevation="9dp"
             />
         <ImageView
             android:id="@+id/ic_up_divan"
@@ -242,7 +246,13 @@
             />
 
     </RelativeLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/status_textview"
+        android:layout_marginTop="158dp"
+        android:background="@color/main_btn_bck"
+        />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
