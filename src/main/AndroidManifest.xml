@@ -54,7 +54,9 @@
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity android:name=".Activity.UserProfileActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified"
+            ></activity>
         <activity android:name=".SIPControl.WalkieTalkieActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".SIPControl.SipSettings"

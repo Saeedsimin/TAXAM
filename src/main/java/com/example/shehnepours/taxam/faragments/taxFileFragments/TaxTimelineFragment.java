@@ -5,13 +5,16 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.shehnepours.taxam.R;
 import com.example.shehnepours.taxam.constants.Variables;
+import com.example.shehnepours.taxam.faragments.services.ConsultPaymentFragment;
 import com.example.shehnepours.taxam.parents.CustomButton;
 import com.example.shehnepours.taxam.parents.VerticalTextView;
 
@@ -51,10 +54,38 @@ public class TaxTimelineFragment extends Fragment {
     }
 
     private void setupBackButton() {
-
+        TextView backIcon;
+        backIcon = (TextView)getActivity().findViewById(R.id.back_btn);
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener( new View.OnKeyListener()
+        {
+            @Override
+            public boolean onKey( View v, int keyCode, KeyEvent event )
+            {
+                if( keyCode == KeyEvent.KEYCODE_BACK )
+                {
+                    getActivity().getSupportFragmentManager().popBackStack();
+                    return true;
+                }
+                return false;
+            }
+        } );
     }
 
     private void setupListener() {
+        consultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToFragment(new ConsultPaymentFragment());
+            }
+        });
     }
 
     private void setupView() {
@@ -102,6 +133,65 @@ public class TaxTimelineFragment extends Fragment {
             madehUp.setVisibility(View.INVISIBLE);
             divanUp.setVisibility(View.INVISIBLE);
 
+        } else if (step == 3) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            ekhtelaf.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            tajdid.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+            shora.setTextColor(Color.WHITE);
+            madeh251.setTextColor(Color.WHITE);
+            divan.setTextColor(Color.WHITE);
+
+            tashkhisUp.setVisibility(View.INVISIBLE);
+            ekhtelafUp.setVisibility(View.INVISIBLE);
+            tajdidUp.setVisibility(View.VISIBLE);
+            shoraUp.setVisibility(View.INVISIBLE);
+            madehUp.setVisibility(View.INVISIBLE);
+            divanUp.setVisibility(View.INVISIBLE);
+
+        } else if(step == 4) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            ekhtelaf.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            tajdid.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            shora.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+            madeh251.setTextColor(Color.WHITE);
+            divan.setTextColor(Color.WHITE);
+
+            tashkhisUp.setVisibility(View.INVISIBLE);
+            ekhtelafUp.setVisibility(View.INVISIBLE);
+            tajdidUp.setVisibility(View.INVISIBLE);
+            shoraUp.setVisibility(View.VISIBLE);
+            madehUp.setVisibility(View.INVISIBLE);
+            divanUp.setVisibility(View.INVISIBLE);
+
+        } else if(step == 5) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            ekhtelaf.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            tajdid.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            shora.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            madeh251.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+            divan.setTextColor(Color.WHITE);
+
+            tashkhisUp.setVisibility(View.INVISIBLE);
+            ekhtelafUp.setVisibility(View.INVISIBLE);
+            tajdidUp.setVisibility(View.INVISIBLE);
+            shoraUp.setVisibility(View.INVISIBLE);
+            madehUp.setVisibility(View.VISIBLE);
+            divanUp.setVisibility(View.INVISIBLE);
+
+        } else if(step == 6) {
+            tashkhis.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            ekhtelaf.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            tajdid.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            shora.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            madeh251.setTextColor(getContext().getResources().getColor(R.color.hint_text));
+            divan.setTextColor(getContext().getResources().getColor(R.color.main_btn_bck));
+
+            tashkhisUp.setVisibility(View.INVISIBLE);
+            ekhtelafUp.setVisibility(View.INVISIBLE);
+            tajdidUp.setVisibility(View.INVISIBLE);
+            shoraUp.setVisibility(View.INVISIBLE);
+            madehUp.setVisibility(View.INVISIBLE);
+            divanUp.setVisibility(View.VISIBLE);
         }
 
 
@@ -113,4 +203,10 @@ public class TaxTimelineFragment extends Fragment {
             step = bundle.getInt(Variables.STEPS_NUMBER);
         }
     }
+    public void goToFragment(Fragment fragment) {
+        getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right,R.anim.slide_out_left,R.anim.slide_in_left,R.anim.slide_out_right)
+                .replace(R.id.newtax_frame_layout,fragment).addToBackStack(Variables.USER_SHORTCUT).commit();
+
+    }
+
 }
